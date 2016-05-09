@@ -4,7 +4,7 @@ branches:
     - travis
 
 before_install: "git clone -b travis `git config --get remote.origin.url` target/travis"
-script: "mvn deploy --settings target/travis/settings.xml"
+script: "mvn deploy --settings target/travis/settings.xml -P release"
 
 env:
   global:
