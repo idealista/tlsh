@@ -76,13 +76,13 @@
 		<profile>
 			<id>release</id>
 			<properties>
-                <gpg.executable>gpg</gpg.executable>
-                <gpg.keyname>${env.GPG_KEYNAME}</gpg.keyname>
-                <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
-                <gpg.defaultKeyring>false</gpg.defaultKeyring>
-                <gpg.publicKeyring>pubring.gpg</gpg.publicKeyring>
-                <gpg.secretKeyring>secring.gpg</gpg.secretKeyring>
-            </properties>
+				<gpg.executable>gpg</gpg.executable>
+				<gpg.keyname>${env.GPG_KEYNAME}</gpg.keyname>
+				<gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+				<gpg.defaultKeyring>false</gpg.defaultKeyring>
+				<gpg.publicKeyring>pubring.gpg</gpg.publicKeyring>
+				<gpg.secretKeyring>secring.gpg</gpg.secretKeyring>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>

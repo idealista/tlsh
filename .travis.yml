@@ -2,11 +2,13 @@ language: java
 branches:
   except:
   - travis
-after_success:
+
+deploy:
   - openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in pubring.gpg.enc -out pubring.gpg -d
   - openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in secring.gpg.enc -out secring.gpg -d
-before_install: git clone -b travis `git config --get remote.origin.url` target/travis
-script: mvn deploy --settings target/travis/settings.xml -P release
+  - git clone -b travis `git config --get remote.origin.url` target/travis
+  - mvn deploy --settings target/travis/settings.xml -P release
+
 env:
   global:
   - secure: Sd2fDQpZs8f+44xFxVnczzjeFbhTAdUYHws3ztJ8DbAOama+4TQCxdeo1skv/+0f7p7uvNVAX+Wa42ZUFdsgHR3CNBzzdEcWOcodnSUwZYxl8I/6xH0Anlp2c2Gw+WuJdqP1QG5Gohwr5gqrTQI0kOYkEKelYeooAShby3FJJ2s9L88mBLCzP/Xh9EwnkZO7AEK8s7qdCmDSZ/K2gim3CUhNznyKtYmUofXEKcs5iqufDf0qtWBE9F/GPe3CIz5tc8R9EiYJziJjNu3TMSRAsTaO7mAtGsJ+ziBE/0nmGOBxQDhUiL8rW48owpwptyGgG6uEYRo4szmkPu5S1r2kuqv0TV/KEf/SWCk/3fnTw9c7TIfIcmtUSU70LH6rOd8Zuy2vXMzX6Kph1REYvt63hyjOnUq8E0RYNUnJuphRQqVvgXxnDMpKyfzRvRtmfTLHjrfqi2haY0Uybfe8jLZdh+obw/1dwXjh9BWZws1wm2AUMmkGjC1vzZmyMxmLRqvR8syayKO89BKTxjACOkj1mXX1H8c/5FRfXxFxQ7KesFPaOxHHVz7P4QZB09bJFSGrn+JtkYQbDe05q2jfHnbGw7/sUHVfMABtma7vm7EMdULHtc/nMSY0NFV8bAoq9fpK6JwdsLWvF16+sq94B4WAJ8p4lpuiPJLKA+FERQzyT7o=
