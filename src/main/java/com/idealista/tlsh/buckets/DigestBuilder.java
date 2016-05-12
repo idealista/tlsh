@@ -6,7 +6,7 @@ import com.idealista.tlsh.digests.Digest;
 import com.idealista.tlsh.digests.LValue;
 import com.idealista.tlsh.digests.Q;
 
-class DigestBuilder {
+public class DigestBuilder {
 
 	private static final int MOD_VALUE = 256;
 

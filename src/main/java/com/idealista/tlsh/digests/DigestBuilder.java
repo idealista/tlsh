@@ -2,7 +2,7 @@ package com.idealista.tlsh.digests;
 
 import com.idealista.tlsh.buckets.ProcessedBuckets;
 
-class DigestBuilder {
+public class DigestBuilder {
 
 	private Checksum checksum;
 
