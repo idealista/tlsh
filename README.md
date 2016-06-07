@@ -8,6 +8,18 @@ The computed hash is 70 hexadecimal characters long. The first 6 characters are 
 
 JavaScript port (originally designed for use with Node.js) can be found [here](https://github.com/idealista-tech/tlsh-js).
 
+## Installation
+
+You can pull it from the central Maven repositories:
+
+```xml
+<dependency>
+  <groupId>com.idealista</groupId>
+  <artifactId>tlsh</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 ## How it's used
 
 With TLSH mainly you can calculate a hash using supported Strings and compute the difference between two resultant hashes.
@@ -89,4 +101,4 @@ We have adopted the original Trend Locality Sensitive Hashing design choices to 
 
 ## License 
 
-Read [LICENSE.txt](LICENSE.txt) attached to the project
+Read [LICENSE.txt](LICENSE.txt) attached to the project⏎
