@@ -1,6 +1,7 @@
 # Java port of TLSH (Trend Locality Sensitive Hash)
+[![Build Status](https://travis-ci.org/idealista/tlsh.png)](https://travis-ci.org/idealista/tlsh)
 
-TLSH is a fuzzy matching library designed by [Trend Micro](http://www.trendmicro.com) (Hosted in [GitHub](https://github.com/trendmicro/tlsh)) 
+TLSH is a fuzzy matching library designed by [Trend Micro](http://www.trendmicro.com) (Hosted in [GitHub](https://github.com/trendmicro/tlsh))
 
 Given a byte stream with a minimum length of 512 characters (and a minimum amount of randomness), TLSH generates a hash value which can be used for similarity comparisons. Similar objects will have similar hash values which allows for the detection of similar objects by comparing their hash values. Note that the byte stream should have a sufficient amount of complexity. For example, a byte stream of identical bytes will not generate a hash value.
 
@@ -37,9 +38,9 @@ String data = "The best documentation is the UNIX source. After all, this is wha
 				+ "Think of them as guidelines. Sometimes they are more like wishes... "
 				+ "Nonetheless, it is all too common to turn to the source and find "
 				+ "options and behaviors that are not documented in the manual. Sometimes "
-				+ "you find options described in the manual that are unimplemented " 
+				+ "you find options described in the manual that are unimplemented "
 				+ "and ignored by the source.";
-				
+
 TLSH tlsh = new TLSH(data);
 
 String hash = tlsh.hash();
@@ -51,7 +52,7 @@ The resultant hash will be _6FF02BEF718027B0160B4391212923ED7F1A463D563B1549B86C
 
 The input data must contain:
 
-* At least 512 characters. 
+* At least 512 characters.
 * A certain amount of randomness.
 
 to generate a hash value. In other case an **InsufficientComplexityException** will be thrown.
@@ -99,6 +100,6 @@ We have adopted the original Trend Locality Sensitive Hashing design choices to 
 * Allow to improve the accuracy using 134 characters hash strings instead of 70 characters hash strings that are currently supported.
 * Complete Data Tests using input data and resulting digests from Trend Micro official repository.
 
-## License 
+## License
 
 Read [LICENSE.txt](LICENSE.txt) attached to the project⏎
